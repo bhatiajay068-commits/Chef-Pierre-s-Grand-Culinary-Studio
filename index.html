@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chef Pierre's Grand Culinary Studio</title>
+    <meta name="description" content="A prestigious culinary studio that recalculates ingredient amounts for any party size with an interactive animated chef mascot." />
+    <meta property="og:title" content="Chef Pierre's Grand Culinary Studio" />
+    <meta property="og:description" content="A prestigious culinary studio that recalculates ingredient amounts for any party size with an interactive animated chef mascot." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- Google Fonts for Cartoon Cafe Game Look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Pure CSS Stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- Top Cute Cafe Awning Banner -->
+    <header class="cafe-header">
+      <div class="cafe-awning"></div>
+      <div class="cafe-nav">
+        <div class="header-container">
+          <div class="brand-box">
+            <div class="brand-icon" id="headerChefIcon" title="Click Chef Pierre!">
+              <svg viewBox="0 0 24 24" width="30" height="30" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+                <line x1="6" y1="17" x2="18" y2="17"/>
+              </svg>
+            </div>
+            <div>
+              <div class="brand-title-wrap">
+                <h1 class="brand-title">Chef Pierre's Grand Culinary Studio</h1>
+                <span class="badge-edition">Royal Kitchen 🥐</span>
+              </div>
+              <p class="brand-tagline">
+                Master culinary proportions & fine recipe artistry for any crowd!
+              </p>
+            </div>
+          </div>
+
+          <div class="header-actions">
+            <button type="button" id="soundToggleBtn" class="cartoon-btn cartoon-btn-secondary" title="Toggle cartoon sound effects">
+              <span id="soundIcon">🔊</span>
+              <span id="soundText">Sound On</span>
+            </button>
+            <button type="button" id="resetBtn" class="cartoon-btn cartoon-btn-secondary" title="Reset recipe">
+              <span>🔄</span>
+              <span>Reset</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- FLOATING SCATTERED KITCHEN UTENSILS (Spread across the screen with household tips) -->
+    <div id="utensilsScatteredContainer">
+      <!-- 1. Tasting Spoon (Top Left) -->
+      <div class="scattered-utensil utensil-spoon" data-utensil="spoon" title="Click for spoon household tip!">
+        <div class="utensil-inner">
+          <span class="utensil-emoji">🥄</span>
+          <span class="utensil-label">Tasting Spoon</span>
+        </div>
+      </div>
+
+      <!-- 2. BBQ Tongs (Top Right) -->
+      <div class="scattered-utensil utensil-barbecue" data-utensil="barbecue" title="Click for BBQ tongs tip!">
+        <div class="utensil-inner">
+          <span class="utensil-emoji">🥩🔥</span>
+          <span class="utensil-label">BBQ Tongs</span>
+        </div>
+      </div>
+
+      <!-- 3. Balloon Whisk (Mid Left) -->
+      <div class="scattered-utensil utensil-whisk" data-utensil="whisk" title="Click for whisk household tip!">
+        <div class="utensil-inner">
+          <span class="utensil-emoji">🥣</span>
+          <span class="utensil-label">Balloon Whisk</span>
+        </div>
+      </div>
+
+      <!-- 4. Dinner Fork (Mid Right) -->
+      <div class="scattered-utensil utensil-fork" data-utensil="fork" title="Click for fork household tip!">
+        <div class="utensil-inner">
+          <span class="utensil-emoji">🍴</span>
+          <span class="utensil-label">Pastry Fork</span>
+        </div>
+      </div>
+
+      <!-- 5. Chef Knife (Lower Left) -->
+      <div class="scattered-utensil utensil-knife" data-utensil="knife" title="Click for knife household tip!">
+        <div class="utensil-inner">
+          <span class="utensil-emoji">🔪</span>
+          <span class="utensil-label">Santoku Knife</span>
+        </div>
+      </div>
+
+      <!-- 6. Pepper Mill (Floating Upper Center-Right) -->
+      <div class="scattered-utensil utensil-seasoning" data-utensil="seasoning" title="Click for spice & seasoning tip!">
+        <div class="utensil-inner">
+          <span class="utensil-emoji">🧂</span>
+          <span class="utensil-label">Pepper Mill</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Utensil Household Tip Modal Card / Toast -->
+    <div id="utensilTipToast" class="tip-toast hidden">
+      <div class="tip-toast-header">
+        <span id="tipToastIcon" class="tip-toast-icon">💡</span>
+        <span id="tipToastTitle" class="tip-toast-title">Household Utensil Tip</span>
+        <button type="button" id="closeTipBtn" class="tip-close-btn">&times;</button>
+      </div>
+      <p id="tipToastBody" class="tip-toast-body"></p>
+    </div>
+
+    <!-- Main Recipe Workspace -->
+    <main class="main-content">
+      
+      <!-- Chef Pierre Dynamic Live Analysis Banner -->
+      <section class="chef-live-banner">
+        <div class="chef-banner-avatar">👨‍🍳</div>
+        <div class="chef-banner-content">
+          <div class="chef-banner-meta">
+            <span class="chef-banner-tag">Chef Pierre's Live Kitchen Analysis</span>
+            <span class="chef-banner-subtag">Proud Cafe Wisdom</span>
+          </div>
+          <p id="liveCommentaryText" class="chef-banner-quote">
+            "Ohh, you want to make Fluffy Strawberry Pancakes? It is exceptionally delicious, by the way! A culinary choice of pure distinction!"
+          </p>
+        </div>
+      </section>
+
+      <!-- Preset Recipe Cards (1-Click Sample Loaders) -->
+      <section class="cartoon-card card-yellow presets-section">
+        <div class="presets-header">
+          <span class="presets-title">✨ Quick Cafe Samples (Try 1-Click Scaling):</span>
+          <span class="presets-note">Instant test recipes</span>
+        </div>
+        <div class="presets-grid" id="presetsGrid">
+          <!-- Populated by script.js -->
+        </div>
+      </section>
+
+      <!-- Step 1: Recipe Input Form -->
+      <section class="cartoon-card card-white recipe-form-card">
+        <div class="ribbon-prep">RECIPE PREP</div>
+
+        <div class="form-header">
+          <h2 class="form-title">
+            <span>🍳</span>
+            <span>Step 1: Enter Your Recipe Details</span>
+          </h2>
+          <p class="form-subtitle">
+            Provide your dish name, servings, and 3 key ingredients with original amounts.
+          </p>
+        </div>
+
+        <!-- Dish & Servings Inputs Grid -->
+        <div class="inputs-grid">
+          <!-- Dish Name -->
+          <div class="input-group">
+            <label for="dishNameInput" class="input-label">Dish / Recipe Name</label>
+            <input 
+              type="text" 
+              id="dishNameInput" 
+              placeholder="e.g. Grandma's Chocolate Cake" 
+              class="cartoon-input"
+            />
+          </div>
+
+          <!-- Recipe Makes Servings -->
+          <div class="input-group">
+            <div class="label-with-tag">
+              <label for="recipeMakesInput" class="input-label">Servings Recipe Makes</label>
+              <span class="tag-helper">(Original)</span>
+            </div>
+            <input 
+              type="number" 
+              id="recipeMakesInput" 
+              step="any" 
+              placeholder="e.g. 4" 
+              class="cartoon-input"
+            />
+            <span class="input-hint">The batch size from the cookbook</span>
+          </div>
+
+          <!-- Servings Wanted -->
+          <div class="input-group">
+            <div class="label-with-tag">
+              <label for="servingsWantedInput" class="input-label">Servings Wanted</label>
+              <span class="tag-helper">(Goal)</span>
+            </div>
+            <input 
+              type="number" 
+              id="servingsWantedInput" 
+              step="any" 
+              placeholder="e.g. 8" 
+              class="cartoon-input"
+            />
+            <span class="input-hint">How many people you want to feed</span>
+          </div>
+        </div>
+
+        <!-- Ingredients Section (Default 3 with Amounts & Units) -->
+        <div class="ingredients-section">
+          <div class="ingredients-header">
+            <label class="input-label">Three Key Ingredients & Amounts:</label>
+            <button type="button" id="addIngredientBtn" class="add-ing-btn">
+              <span>+</span>
+              <span>Add Extra Ingredient</span>
+            </button>
+          </div>
+
+          <div id="ingredientsList" class="ingredients-list">
+            <!-- Populated dynamically by script.js -->
+          </div>
+        </div>
+
+        <!-- Rescale Action Button Bar -->
+        <div class="calculate-bar">
+          <button type="button" id="rescaleBtn" class="cartoon-btn cartoon-btn-primary calculate-btn">
+            <span class="btn-icon">👨‍🍳</span>
+            <span>Rescale Recipe Amounts</span>
+            <span class="btn-sparkle">✨</span>
+          </button>
+
+          <span class="formula-caption">
+            Formula: <code>Original × (Wanted ÷ Makes)</code>
+          </span>
+        </div>
+      </section>
+
+      <!-- Error / Validation Callout (Rule 4: Show message and NO result if empty, zero or negative) -->
+      <section id="errorCard" class="cartoon-card card-pink error-callout hidden">
+        <div class="error-icon">⚠️</div>
+        <div class="error-content">
+          <h3 class="error-heading">Recipe Rescaling Paused</h3>
+          <p id="errorMessageText" class="error-text"></p>
+          <p class="error-subtext">
+            Please enter positive numbers greater than 0 for both servings so Chef Pierre can calculate the exact proportions!
+          </p>
+        </div>
+      </section>
+
+      <!-- Scaled Results Section (Rule 2, 3, 5: Shows the 3 ingredients with their new amounts) -->
+      <section id="resultsCard" class="cartoon-card card-mint results-section">
+        <div class="results-header">
+          <div>
+            <div class="results-title-wrap">
+              <span class="results-emoji">🍰</span>
+              <h2 id="resultDishTitle" class="results-title">Scaled Recipe</h2>
+            </div>
+            <p id="resultServingsSubtitle" class="results-subtitle">
+              Recalculated for 8 servings (originally made 4)
+            </p>
+          </div>
+
+          <div class="results-actions">
+            <div class="multiplier-box">
+              <span class="multiplier-label">Multiplier Factor</span>
+              <span id="multiplierValue" class="multiplier-value">2.00x</span>
+            </div>
+
+            <button type="button" id="copyRecipeBtn" class="cartoon-btn cartoon-btn-mint copy-btn" title="Copy scaled recipe">
+              <span id="copyIcon">📋</span>
+              <span id="copyText">Copy Recipe</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Grid of Scaled Ingredients -->
+        <div class="scaled-items-wrap">
+          <div class="scaled-items-label">
+            <span>New Scaled Ingredient Quantities:</span>
+            <span class="scaled-items-sub">(Saved automatically & persists across page reloads!)</span>
+          </div>
+
+          <div id="scaledIngredientsGrid" class="scaled-grid">
+            <!-- Populated by script.js -->
+          </div>
+        </div>
+
+        <!-- Pro Home Cook Tip Box -->
+        <div class="home-cook-note">
+          <span class="note-icon">💡</span>
+          <div>
+            <strong>Home Cook Pro-Tip for Scaled Batches:</strong>
+            <p>
+              Liquid extracts, spices, and leavening agents scale well with this ratio, but always taste test seasoning as you cook. Reloading or refreshing this page will keep your scaled recipe intact!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Explanation Card -->
+      <section class="cartoon-card card-white explanation-section">
+        <h3 class="explanation-title">
+          <span>🍰</span>
+          <span>How Recipe Rescaling Works in Our Cafe</span>
+        </h3>
+        <div class="explanation-grid">
+          <div class="explanation-col">
+            <strong>1. Find The Scale Factor</strong>
+            <p>Divide the servings you want by the servings the recipe makes. For example, 8 wanted ÷ 4 made = 2.0x factor.</p>
+          </div>
+          <div class="explanation-col">
+            <strong>2. Multiply Each Ingredient</strong>
+            <p>Multiply every ingredient's original quantity by that scale factor so proportions remain harmonious.</p>
+          </div>
+          <div class="explanation-col">
+            <strong>3. Persistent In Your Kitchen</strong>
+            <p>All your edits are stored in your browser's local memory so you won't lose your work if your tab refreshes!</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========================================================================= -->
+    <!-- INTERACTIVE CAFE CHEF PIERRE (LOWER RIGHT CORNER)                         -->
+    <!-- Dense rounded mustache, eyebrow arches, reactive hat, deep voice line      -->
+    <!-- "Howww can I helllllp youuuuuuuuuuuu", multiple punch lines & proud laugh  -->
+    <!-- ========================================================================= -->
+    <aside class="cafe-mascot-container" aria-label="Interactive Proud Cafe Chef Pierre">
+      <!-- Mascot Speech Bubble (Cloud - adjustable: click to appear, click to disappear) -->
+      <div id="mascotBubble" class="mascot-speech-bubble">
+        <div class="bubble-meta">
+          <span class="bubble-chef-name">
+            <span>Chef Pierre (I AM THE CAFE!)</span>
+            <span id="heartsCounter" class="hearts-counter"></span>
+          </span>
+          <div class="bubble-actions">
+            <span id="scrollPercentBadge" class="bubble-scroll-badge">Scroll: 0%</span>
+            <button type="button" id="closeBubbleBtn" class="bubble-close-btn" aria-label="Close speech cloud">&times;</button>
+          </div>
+        </div>
+        <p id="mascotDialogueText" class="bubble-dialogue-text">
+          "Welcome to MY cafe! Look at my magnificent mustache—you have come to the right master for culinary advice!"
+        </p>
+        <div class="bubble-footer-hint">
+          <span>👉 Click Chef to toggle cloud or change punch lines!</span>
+          <span id="eyebrowIndicator" class="eyebrow-indicator hidden">🤨 Eyebrows Raised!</span>
+        </div>
+        <div class="bubble-pointer"></div>
+      </div>
+
+      <!-- Mini prompt badge when cloud is hidden -->
+      <button type="button" id="bubbleOpenPrompt" class="chef-talk-prompt hidden" aria-label="Open speech cloud">
+        <span>💬</span>
+        <span>Ask Chef Pierre</span>
+      </button>
+
+      <!-- Mascot Character SVG (Bigger, dense mustache, animated eyebrows, tall white hat) -->
+      <div id="mascotInteractive" class="mascot-character" role="button" tabindex="0">
+        <div class="mascot-stage">
+          <svg viewBox="0 0 160 160" class="mascot-svg">
+            <!-- Wooden cafe counter base -->
+            <ellipse cx="80" cy="144" rx="72" ry="16" fill="#C9936E" stroke="#5C3D2E" stroke-width="4" />
+            <ellipse cx="80" cy="140" rx="68" ry="13" fill="#E2AC85" />
+            
+            <!-- Mini cafe coffee cup / plate on counter -->
+            <g transform="translate(116, 115) scale(0.75)">
+              <rect x="0" y="8" width="22" height="18" rx="4" fill="#FFF5F7" stroke="#5C3D2E" stroke-width="3" />
+              <path d="M 22 12 Q 28 14 28 18 Q 28 22 22 24" fill="none" stroke="#5C3D2E" stroke-width="3" />
+              <ellipse cx="11" cy="9" rx="10" ry="3" fill="#8C533C" />
+              <path d="M 7 4 Q 5 0 8 -4" fill="none" stroke="#FFAAA6" stroke-width="2" stroke-linecap="round" class="steam-line" />
+              <path d="M 14 4 Q 16 0 13 -4" fill="none" stroke="#FFAAA6" stroke-width="2" stroke-linecap="round" class="steam-line" />
+            </g>
+
+            <!-- Chef Body & Apron -->
+            <path d="M 40 142 C 40 102, 120 102, 120 142 Z" fill="#FFFFFF" stroke="#5C3D2E" stroke-width="4" />
+            
+            <!-- Red Neckerchief / Scarf -->
+            <path d="M 62 94 L 80 114 L 98 94 C 92 90, 68 90, 62 94 Z" fill="#FF6B6B" stroke="#5C3D2E" stroke-width="3.5" />
+            <circle cx="80" cy="100" r="4.5" fill="#EE5253" />
+
+            <!-- Chef Head -->
+            <circle cx="80" cy="72" r="31" fill="#FFE8D6" stroke="#5C3D2E" stroke-width="4" />
+
+            <!-- Rosy Blushing Cheeks -->
+            <ellipse cx="60" cy="78" rx="7" ry="4" fill="#FFAAA6" opacity="0.85" />
+            <ellipse cx="100" cy="78" rx="7" ry="4" fill="#FFAAA6" opacity="0.85" />
+
+            <!-- DENSE ROUNDED EYEBROWS (Animated / Raisable) -->
+            <g id="chefEyebrows" class="eyebrows-group">
+              <path d="M 60 61 Q 68 53 76 60" fill="none" stroke="#4A2E18" stroke-width="4.5" stroke-linecap="round" />
+              <path d="M 84 60 Q 92 51 100 59" fill="none" stroke="#4A2E18" stroke-width="4.5" stroke-linecap="round" />
+            </g>
+
+            <!-- Chef Eyes -->
+            <g id="chefEyes">
+              <path id="leftEyeWink" d="M 62 69 Q 68 64 74 69" fill="none" stroke="#4A3B32" stroke-width="3.5" stroke-linecap="round" />
+              <circle id="rightEyeOpen" cx="92" cy="69" r="4" fill="#4A3B32" />
+              <circle id="rightEyeGlitter" cx="93.5" cy="67.5" r="1.5" fill="#FFFFFF" />
+            </g>
+
+            <!-- DENSE ROUNDED MUSTACHE (Curled, voluminous, twitches proudly) -->
+            <g id="chefMustache" class="mustache-group">
+              <path
+                d="M 80 78 C 74 72, 60 70, 52 76 C 45 81, 46 88, 54 89 C 64 90, 72 84, 80 82 C 88 84, 96 90, 106 89 C 114 88, 115 81, 108 76 C 100 70, 86 72, 80 78 Z"
+                fill="#543310"
+                stroke="#382008"
+                stroke-width="3.5"
+              />
+              <path d="M 56 78 C 64 75, 72 78, 77 80" fill="none" stroke="#7A4C1D" stroke-width="2" stroke-linecap="round" />
+              <path d="M 104 78 C 96 75, 88 78, 83 80" fill="none" stroke="#7A4C1D" stroke-width="2" stroke-linecap="round" />
+            </g>
+
+            <!-- Chef Smile -->
+            <path id="chefMouth" d="M 74 86 Q 80 91 86 86" fill="none" stroke="#5C3D2E" stroke-width="2.5" stroke-linecap="round" />
+
+            <!-- TALL PROFESSIONAL WHITE COOK HAT (TOQUE BLANCHE) -->
+            <g id="chefHatGroup" class="hat-group">
+              <!-- Hat Headband -->
+              <rect x="54" y="42" width="52" height="13" rx="3.5" fill="#FFFFFF" stroke="#5C3D2E" stroke-width="3.5" />
+              <line x1="56" y1="48" x2="104" y2="48" stroke="#E6E6E6" stroke-width="1.5" stroke-dasharray="3,2" />
+
+              <!-- Hat Crown -->
+              <path
+                d="M 56 42 C 42 38, 38 18, 52 8 C 56 -2, 74 -2, 78 7 C 84 -2, 102 -2, 107 8 C 122 16, 118 38, 104 42 Z"
+                fill="#FFFFFF"
+                stroke="#5C3D2E"
+                stroke-width="3.5"
+              />
+              <!-- Pleats -->
+              <path d="M 65 9 C 66 20, 67 32, 68 42" fill="none" stroke="#E2E8F0" stroke-width="2.5" />
+              <path d="M 80 5 C 80 18, 80 30, 80 42" fill="none" stroke="#CBD5E1" stroke-width="2.5" />
+              <path d="M 95 9 C 94 20, 93 32, 92 42" fill="none" stroke="#E2E8F0" stroke-width="2.5" />
+              <ellipse cx="62" cy="11" rx="6" ry="3" fill="#FFFFFF" opacity="0.9" />
+              <circle cx="80" cy="48" r="2.8" fill="#FFD166" stroke="#5C3D2E" stroke-width="1.2" />
+            </g>
+
+            <!-- Whisk -->
+            <g transform="translate(34, 104) rotate(-25) scale(0.9)">
+              <line x1="0" y1="20" x2="0" y2="40" stroke="#5C3D2E" stroke-width="3" stroke-linecap="round" />
+              <ellipse cx="0" cy="12" rx="7" ry="12" fill="none" stroke="#A0AEC0" stroke-width="2" />
+              <ellipse cx="0" cy="12" rx="4" ry="12" fill="none" stroke="#718096" stroke-width="2" />
+            </g>
+          </svg>
+
+          <div class="hat-active-badge">
+            <span>Hat Active</span>
+            <span class="active-dot"></span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <footer class="cafe-footer">
+      <p>Chef Pierre's Grand Culinary Studio · Presided over by Chef Pierre & his legendary mustache.</p>
+      <p class="footer-sub">All recipes, servings, and scaled calculations are stored in your browser's memory! 🥐</p>
+    </footer>
+
+    <!-- Pure Script file -->
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>

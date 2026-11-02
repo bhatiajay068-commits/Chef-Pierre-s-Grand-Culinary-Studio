@@ -1,0 +1,6 @@
+{
+  "name": "Pastel Cafe Recipe Rescaler",
+  "description": "A charming cartoon cafe-themed recipe scaler that recalculates ingredient amounts for any party size with an interactive animated chef mascot.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
