@@ -17,6 +17,1552 @@
     
     <!-- Custom Pure CSS Stylesheet -->
     <link rel="stylesheet" href="./style.css" />
+    <style id="embeddedStyles">
+/* =========================================================================
+   PASTEL CAFE RECIPE RESCALER - PURE CSS STYLESHEET
+   Cartoon Game Cafe Aesthetic, Scattered Utensils, Interactive Chef Mascot
+   ========================================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Fredoka', 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #FFFDF9;
+  background-image: radial-gradient(#F3E5D8 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  color: #4A3B32;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Cafe Awning & Header */
+.cafe-header {
+  position: relative;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(160, 110, 80, 0.08);
+  z-index: 40;
+}
+
+.cafe-awning {
+  height: 36px;
+  width: 100%;
+  border-bottom: 4px solid rgba(255, 170, 166, 0.5);
+  background: repeating-linear-gradient(
+    90deg,
+    #FF8FA3 0px,
+    #FF8FA3 36px,
+    #FFF5F7 36px,
+    #FFF5F7 72px
+  );
+}
+
+.cafe-nav {
+  background-color: #FFF5F7;
+  border-bottom: 4px solid #FFCCD5;
+  padding: 16px 24px;
+}
+
+.header-container {
+  max-width: 1020px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  .header-container {
+    flex-direction: row;
+  }
+}
+
+.brand-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  background-color: #FF8FA3;
+  border: 3.5px solid #E66A82;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 0 #D3526A;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.brand-icon:hover {
+  transform: rotate(8deg) scale(1.06);
+}
+
+.brand-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.brand-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #5C3D2E;
+  letter-spacing: -0.5px;
+}
+
+@media (min-width: 640px) {
+  .brand-title {
+    font-size: 28px;
+  }
+}
+
+.badge-edition {
+  background-color: #FFE5EC;
+  border: 2px solid #FFB3C1;
+  color: #A04A5D;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  box-shadow: 0 2px 4px rgba(255, 179, 193, 0.2);
+}
+
+.brand-tagline {
+  font-size: 13px;
+  color: #8C6D62;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Cartoon Buttons */
+.cartoon-btn {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  outline: none;
+  user-select: none;
+  transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cartoon-btn-secondary {
+  background-color: #FFF0F3;
+  color: #A04A5D;
+  border: 2.5px solid #FFCCD5;
+  box-shadow: 0 4px 0 #FFB3C1;
+}
+
+.cartoon-btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #FFB3C1;
+  background-color: #FFE3E8;
+}
+
+.cartoon-btn-secondary:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #FFB3C1;
+}
+
+.cartoon-btn-primary {
+  background-color: #FF8FA3;
+  color: #FFFFFF;
+  border: 3px solid #E66A82;
+  box-shadow: 0 6px 0 #D3526A;
+  font-size: 17px;
+  padding: 14px 28px;
+}
+
+.cartoon-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #D3526A;
+  background-color: #FF7B93;
+}
+
+.cartoon-btn-primary:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #D3526A;
+}
+
+.cartoon-btn-mint {
+  background-color: #74C69D;
+  color: #FFFFFF;
+  border: 2.5px solid #52B788;
+  box-shadow: 0 4px 0 #40916C;
+}
+
+.cartoon-btn-mint:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #40916C;
+  background-color: #52B788;
+}
+
+.cartoon-btn-mint:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #40916C;
+}
+
+/* =========================================================================
+   SCATTERED FLOATING KITCHEN UTENSILS (Spread across the screen margins)
+   ========================================================================= */
+#utensilsScatteredContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 35;
+  overflow: hidden;
+}
+
+.scattered-utensil {
+  position: absolute;
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.utensil-inner {
+  background-color: #FFFFFF;
+  border: 3px solid #EEDBC5;
+  border-radius: 20px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 0 #F2DFC7, 0 8px 16px rgba(160, 110, 80, 0.12);
+  transition: all 0.2s ease;
+}
+
+.utensil-inner:hover {
+  border-color: #FF8FA3;
+  background-color: #FFF5F7;
+  transform: scale(1.1) translateY(-4px);
+  box-shadow: 0 9px 0 #FFB3C1, 0 12px 20px rgba(255, 143, 163, 0.25);
+}
+
+.utensil-inner:active {
+  transform: scale(0.95) translateY(2px);
+  box-shadow: 0 2px 0 #FFB3C1;
+}
+
+.utensil-emoji {
+  font-size: 22px;
+}
+
+.utensil-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #5C3D2E;
+  white-space: nowrap;
+}
+
+/* Individual Random/Scattered Screen Positions */
+/* 1. Spoon (Top Left) */
+.utensil-spoon {
+  top: 130px;
+  left: 20px;
+  animation: float1 4s ease-in-out infinite;
+}
+
+/* 2. BBQ Tongs (Top Right) */
+.utensil-barbecue {
+  top: 140px;
+  right: 25px;
+  animation: float2 4.5s ease-in-out infinite;
+}
+
+/* 3. Whisk (Mid Left) */
+.utensil-whisk {
+  top: 420px;
+  left: 15px;
+  animation: float3 3.8s ease-in-out infinite;
+}
+
+/* 4. Pastry Fork (Mid Right) */
+.utensil-fork {
+  top: 440px;
+  right: 20px;
+  animation: float4 4.2s ease-in-out infinite;
+}
+
+/* 5. Chef Knife (Lower Left) */
+.utensil-knife {
+  top: 760px;
+  left: 22px;
+  animation: float1 4.6s ease-in-out infinite;
+}
+
+/* 6. Pepper Mill (Floating Upper Right Center) */
+.utensil-seasoning {
+  top: 290px;
+  right: 18px;
+  animation: float2 4.1s ease-in-out infinite;
+}
+
+/* On smaller screens, position them nicely along bottom/side trays */
+@media (max-width: 1024px) {
+  .utensil-spoon { top: 110px; left: 8px; }
+  .utensil-barbecue { top: 110px; right: 8px; }
+  .utensil-whisk { top: 380px; left: 8px; }
+  .utensil-fork { top: 380px; right: 8px; }
+  .utensil-knife { top: 680px; left: 8px; }
+  .utensil-seasoning { top: 250px; right: 8px; }
+  .utensil-label { display: none; }
+  .utensil-inner { padding: 8px 10px; border-radius: 9999px; }
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-3deg); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(-4deg); }
+}
+
+@keyframes float4 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-9px) rotate(4deg); }
+}
+
+/* Utensil Clatter click animation */
+@keyframes utensilClatter {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.25) rotate(-18deg); }
+  50% { transform: scale(1.2) rotate(18deg); }
+  75% { transform: scale(1.1) rotate(-8deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.utensil-bounce {
+  animation: utensilClatter 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Household Utensil Tip Toast Modal */
+.tip-toast {
+  position: fixed;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #FFFFFF;
+  border: 3.5px solid #FF8FA3;
+  border-radius: 22px;
+  box-shadow: 0 10px 0 #FFCCD5, 0 16px 30px rgba(160, 110, 80, 0.15);
+  padding: 16px 20px;
+  max-width: 480px;
+  width: 90%;
+  z-index: 60;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.tip-toast.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-20px) scale(0.95);
+  pointer-events: none;
+}
+
+.tip-toast-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.tip-toast-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #A04A5D;
+}
+
+.tip-toast-icon {
+  font-size: 20px;
+  margin-right: 6px;
+}
+
+.tip-close-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #A07A66;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.tip-close-btn:hover {
+  color: #D3526A;
+}
+
+.tip-toast-body {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #5C3D2E;
+  font-weight: 500;
+}
+
+/* =========================================================================
+   CARTOON CARDS & WORKSPACE
+   ========================================================================= */
+.main-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 16px 120px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: relative;
+  z-index: 20;
+}
+
+.cartoon-card {
+  border-radius: 28px;
+  padding: 24px;
+  position: relative;
+}
+
+@media (min-width: 640px) {
+  .cartoon-card {
+    padding: 32px;
+  }
+}
+
+.card-white {
+  background-color: #FFFFFF;
+  border: 3.5px solid #EEDBC5;
+  box-shadow: 0 10px 0 0 #F2DFC7, 0 16px 25px -5px rgba(160, 110, 80, 0.08);
+}
+
+.card-yellow {
+  background-color: #FFFDF0;
+  border: 3.5px solid #FCE5A4;
+  box-shadow: 0 10px 0 0 #FAD277, 0 16px 25px -5px rgba(253, 203, 110, 0.15);
+}
+
+.card-pink {
+  background-color: #FFF5F7;
+  border: 3.5px solid #FFCCD5;
+  box-shadow: 0 10px 0 0 #FFB3C1, 0 16px 25px -5px rgba(255, 143, 163, 0.15);
+}
+
+.card-mint {
+  background-color: #F4FAF6;
+  border: 3.5px solid #C7E8D6;
+  box-shadow: 0 10px 0 0 #A8DCBF, 0 16px 25px -5px rgba(116, 198, 157, 0.15);
+}
+
+/* Chef Live Analysis Banner */
+.chef-live-banner {
+  background-color: #FFF8F0;
+  border: 2.5px solid #F9DCC4;
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: 0 4px 10px rgba(160, 110, 80, 0.06);
+}
+
+.chef-banner-avatar {
+  font-size: 28px;
+  background-color: #FF8FA3;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(211, 82, 106, 0.2);
+}
+
+.chef-banner-content {
+  flex: 1;
+}
+
+.chef-banner-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.chef-banner-tag {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #D3526A;
+  letter-spacing: 0.5px;
+}
+
+.chef-banner-subtag {
+  font-size: 10px;
+  background-color: #FFE5EC;
+  color: #A04A5D;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.chef-banner-quote {
+  font-size: 13px;
+  font-weight: 600;
+  color: #5C3D2E;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+/* Presets Section */
+.presets-section {
+  padding: 18px 24px;
+}
+
+.presets-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.presets-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #8C6D62;
+}
+
+.presets-note {
+  font-size: 11px;
+  color: #A07A66;
+}
+
+.presets-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .presets-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.preset-card-btn {
+  background-color: #FFFFFF;
+  border: 2px solid #F9E2AF;
+  border-radius: 18px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.preset-card-btn:hover {
+  border-color: #FF8FA3;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(160, 110, 80, 0.1);
+}
+
+.preset-emoji {
+  font-size: 26px;
+}
+
+.preset-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #5C3D2E;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preset-sub {
+  font-size: 11px;
+  color: #A07A66;
+  margin-top: 2px;
+}
+
+/* Recipe Form Card */
+.recipe-form-card {
+  overflow: hidden;
+}
+
+.ribbon-prep {
+  position: absolute;
+  top: 14px;
+  right: -30px;
+  background-color: #FFCCD5;
+  color: #A04A5D;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 34px;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 4px rgba(160, 110, 80, 0.1);
+}
+
+.form-header {
+  border-bottom: 2px dashed #EEDBC5;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.form-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #5C3D2E;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-subtitle {
+  font-size: 13px;
+  color: #8C6D62;
+  margin-top: 4px;
+}
+
+.inputs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 640px) {
+  .inputs-grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #5C3D2E;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.label-with-tag {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tag-helper {
+  font-size: 10px;
+  color: #A07A66;
+}
+
+.cartoon-input {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5C3D2E;
+  background-color: #FFFBF7;
+  border: 2px solid #EEDBC5;
+  border-radius: 16px;
+  padding: 10px 14px;
+  outline: none;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+
+.cartoon-input:focus {
+  border-color: #FF8FA3;
+  box-shadow: 0 0 0 3px rgba(255, 204, 213, 0.5);
+  background-color: #FFFFFF;
+}
+
+.cartoon-input.input-error {
+  border-color: #FF8FA3;
+  background-color: #FFF0F3;
+}
+
+.input-hint {
+  font-size: 11px;
+  color: #A07A66;
+  margin-top: 4px;
+}
+
+/* Ingredients Section */
+.ingredients-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ingredients-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-ing-btn {
+  font-family: inherit;
+  background: none;
+  border: none;
+  color: #A04A5D;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.add-ing-btn:hover {
+  color: #D3526A;
+  text-decoration: underline;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ingredient-row {
+  background-color: #FFFDFB;
+  border: 2px solid #EEDBC5;
+  border-radius: 18px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.15s ease;
+}
+
+@media (min-width: 640px) {
+  .ingredient-row {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.ingredient-row:hover {
+  border-color: #FFCCD5;
+}
+
+.ing-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ing-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #FFE5EC;
+  border: 2px solid #FFCCD5;
+  color: #A04A5D;
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ing-name-input {
+  flex: 1;
+}
+
+.ing-amount-input {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .ing-amount-input {
+    width: 110px;
+  }
+}
+
+.ing-unit-select {
+  width: 100%;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .ing-unit-select {
+    width: 120px;
+  }
+}
+
+.ing-remove-btn {
+  background: none;
+  border: none;
+  color: #C48B9F;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  align-self: flex-end;
+}
+
+@media (min-width: 640px) {
+  .ing-remove-btn {
+    align-self: center;
+  }
+}
+
+.ing-remove-btn:hover {
+  color: #D3526A;
+  background-color: #FFF0F3;
+}
+
+/* Calculate Bar */
+.calculate-bar {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  .calculate-bar {
+    flex-direction: row;
+  }
+}
+
+.calculate-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .calculate-btn {
+    width: auto;
+  }
+}
+
+.btn-icon {
+  font-size: 22px;
+}
+
+.btn-sparkle {
+  font-size: 18px;
+}
+
+.formula-caption {
+  font-size: 12px;
+  color: #8C6D62;
+  font-weight: 500;
+}
+
+.formula-caption code {
+  background-color: #FFF0F3;
+  color: #A04A5D;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: monospace;
+}
+
+/* Error Callout (Strictly Rule 4) */
+.error-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  border-color: #FF8FA3;
+  animation: shakeAlert 0.4s ease-in-out;
+}
+
+.error-callout.hidden {
+  display: none;
+}
+
+@keyframes shakeAlert {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.error-icon {
+  font-size: 26px;
+  background-color: #FF8FA3;
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.error-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: #A04A5D;
+  margin-bottom: 2px;
+}
+
+.error-text {
+  font-size: 13.5px;
+  color: #7A3644;
+  font-weight: 600;
+}
+
+.error-subtext {
+  font-size: 11.5px;
+  color: rgba(160, 74, 93, 0.85);
+  margin-top: 4px;
+}
+
+/* Results Section (Rule 2, 3, 5) */
+.results-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.results-section.hidden {
+  display: none;
+}
+
+.results-header {
+  border-bottom: 2px dashed #A8DCBF;
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  .results-header {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.results-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.results-emoji {
+  font-size: 26px;
+}
+
+.results-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1B4332;
+}
+
+.results-subtitle {
+  font-size: 13px;
+  color: #2D6A4F;
+  margin-top: 3px;
+  font-weight: 500;
+}
+
+.results-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.multiplier-box {
+  background-color: #FFFFFF;
+  border: 2px solid #52B788;
+  border-radius: 16px;
+  padding: 6px 14px;
+  text-align: center;
+  box-shadow: 0 4px 0 #40916C;
+}
+
+.multiplier-label {
+  display: block;
+  font-size: 9px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #40916C;
+}
+
+.multiplier-value {
+  font-size: 17px;
+  font-weight: 800;
+  color: #1B4332;
+}
+
+.copy-btn {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+
+.scaled-items-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scaled-items-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1B4332;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.scaled-items-sub {
+  font-size: 11px;
+  font-weight: 500;
+  color: #2D6A4F;
+  text-transform: none;
+}
+
+.scaled-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .scaled-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.scaled-card {
+  background-color: #FFFFFF;
+  border: 3px solid #A8DCBF;
+  border-radius: 20px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 0 #95D5B2;
+  transition: transform 0.15s ease;
+}
+
+.scaled-card:hover {
+  transform: translateY(-4px);
+}
+
+.scaled-card-top {
+  margin-bottom: 14px;
+}
+
+.scaled-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.scaled-badge {
+  background-color: #D8F3DC;
+  color: #1B4332;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  border: 1px solid #B7E4C7;
+}
+
+.scaled-orig-note {
+  font-size: 11px;
+  color: #52B788;
+  font-weight: 600;
+}
+
+.scaled-ing-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1B4332;
+}
+
+.scaled-card-calc {
+  border-top: 2px dashed #D8F3DC;
+  padding-top: 12px;
+}
+
+.scaled-new-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #40916C;
+  margin-bottom: 2px;
+}
+
+.scaled-amount-display {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.scaled-number {
+  font-size: 30px;
+  font-weight: 800;
+  color: #1B4332;
+}
+
+.scaled-unit {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2D6A4F;
+}
+
+.scaled-fraction-pill {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #2D6A4F;
+  background-color: #E8F5E9;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+.scaled-formula-line {
+  font-size: 10.5px;
+  font-family: monospace;
+  color: #52B788;
+  background-color: #F0FFF4;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(183, 228, 199, 0.7);
+  margin-top: 8px;
+}
+
+.home-cook-note {
+  background-color: #E8F8F0;
+  border: 2px solid #B7E4C7;
+  border-radius: 18px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 12.5px;
+  color: #2D6A4F;
+}
+
+.note-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* Explanation Section */
+.explanation-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.explanation-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #5C3D2E;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.explanation-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  font-size: 12px;
+  color: #7A6256;
+}
+
+@media (min-width: 640px) {
+  .explanation-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.explanation-col {
+  background-color: #FFFDFB;
+  border: 1.5px solid #EEDBC5;
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.explanation-col strong {
+  display: block;
+  font-size: 13px;
+  color: #5C3D2E;
+  margin-bottom: 4px;
+}
+
+/* =========================================================================
+   INTERACTIVE CAFE CHEF MASCOT (LOWER RIGHT CORNER)
+   ========================================================================= */
+.cafe-mascot-container {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 55;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: auto;
+}
+
+@media (min-width: 640px) {
+  .cafe-mascot-container {
+    bottom: 24px;
+    right: 24px;
+  }
+}
+
+/* Speech Bubble (Adjustable Cloud) */
+.mascot-speech-bubble {
+  background-color: #FFFFFF;
+  border: 3.5px solid #5C3D2E;
+  border-radius: 26px;
+  padding: 14px 16px;
+  box-shadow: 0 7px 0 #4A3B32, 0 10px 20px rgba(74, 59, 50, 0.15);
+  max-width: 290px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  position: relative;
+  transform-origin: bottom right;
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease, visibility 0.25s ease;
+  text-align: left;
+}
+
+@media (min-width: 640px) {
+  .mascot-speech-bubble {
+    max-width: 340px;
+    padding: 16px 18px;
+  }
+}
+
+.mascot-speech-bubble:hover {
+  transform: scale(1.03) translateY(-2px);
+}
+
+/* Hidden cloud state when toggled off */
+.mascot-speech-bubble.bubble-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.65) translateY(20px);
+  pointer-events: none;
+}
+
+.bubble-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.bubble-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bubble-close-btn {
+  background: #FFF0F3;
+  border: 1.5px solid #FFCCD5;
+  color: #A04A5D;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  line-height: 1;
+  transition: all 0.15s ease;
+}
+
+.bubble-close-btn:hover {
+  background: #FF8FA3;
+  color: white;
+  transform: scale(1.15);
+}
+
+/* Mini prompt button when cloud is closed */
+.chef-talk-prompt {
+  background-color: #FFFFFF;
+  border: 2.5px solid #5C3D2E;
+  color: #5C3D2E;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: inherit;
+  box-shadow: 0 4px 0 #4A3B32;
+  margin-bottom: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: float2 3.5s ease-in-out infinite;
+}
+
+.chef-talk-prompt:hover {
+  transform: scale(1.08) translateY(-3px);
+  background-color: #FFF5F7;
+  border-color: #D3526A;
+  color: #D3526A;
+  box-shadow: 0 6px 0 #D3526A;
+}
+
+.chef-talk-prompt:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #4A3B32;
+}
+
+.chef-talk-prompt.hidden {
+  display: none !important;
+}
+
+.bubble-chef-name {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #D3526A;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hearts-counter {
+  color: #FF4D6D;
+  font-size: 11px;
+}
+
+.bubble-scroll-badge {
+  font-size: 10px;
+  font-weight: 700;
+  background-color: #FFF0F3;
+  color: #A07A66;
+  border: 1px solid #FFCCD5;
+  padding: 2px 7px;
+  border-radius: 9999px;
+}
+
+.bubble-dialogue-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: #4A3B32;
+  line-height: 1.4;
+}
+
+.bubble-footer-hint {
+  font-size: 10px;
+  color: #8C6D62;
+  margin-top: 8px;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.eyebrow-indicator {
+  color: #D3526A;
+  font-weight: 700;
+}
+
+.eyebrow-indicator.hidden {
+  display: none;
+}
+
+.bubble-pointer {
+  position: absolute;
+  bottom: -9px;
+  right: 48px;
+  width: 16px;
+  height: 16px;
+  background-color: #FFFFFF;
+  border-right: 3.5px solid #5C3D2E;
+  border-bottom: 3.5px solid #5C3D2E;
+  transform: rotate(45deg);
+}
+
+/* Mascot SVG Stage */
+.mascot-character {
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mascot-character:hover {
+  transform: translateY(-6px);
+}
+
+.mascot-character.proud-shake {
+  animation: proudLaughShake 1.4s ease-in-out;
+}
+
+@keyframes proudLaughShake {
+  0%, 100% { transform: translateY(0) scale(1); }
+  15% { transform: translateY(-10px) scale(1.06) rotate(-3deg); }
+  30% { transform: translateY(0) scale(0.98); }
+  45% { transform: translateY(-8px) scale(1.04) rotate(3deg); }
+  60% { transform: translateY(0) scale(0.98); }
+  75% { transform: translateY(-5px) scale(1.02); }
+  90% { transform: translateY(0) scale(1); }
+}
+
+.mascot-stage {
+  width: 140px;
+  height: 140px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .mascot-stage {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+.mascot-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 10px 14px rgba(92, 61, 46, 0.3));
+}
+
+.hat-group {
+  transform-origin: 80px 46px;
+  transition: transform 0.15s ease-out;
+}
+
+.eyebrows-group {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.eyebrows-raised {
+  transform: translateY(-8px);
+}
+
+.mustache-group {
+  transform-origin: 80px 80px;
+  transition: transform 0.2s ease;
+}
+
+.mustache-wiggling {
+  animation: mustacheWiggleAnim 0.8s ease-in-out;
+}
+
+@keyframes mustacheWiggleAnim {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.15, 1.1) rotate(-4deg); }
+  50% { transform: scale(1.18, 1.12) rotate(4deg); }
+  75% { transform: scale(1.08, 1) rotate(-2deg); }
+}
+
+.steam-line {
+  animation: steamRise 1.8s ease-in-out infinite;
+}
+
+@keyframes steamRise {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-4px); }
+}
+
+.hat-active-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #FFCCD5;
+  border: 2px solid #5C3D2E;
+  border-radius: 9999px;
+  padding: 2px 8px;
+  font-size: 9px;
+  font-weight: 800;
+  color: #A04A5D;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.active-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #2ECC71;
+  animation: dotPulse 1.2s infinite;
+}
+
+@keyframes dotPulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+/* Footer */
+.cafe-footer {
+  text-align: center;
+  font-size: 12px;
+  color: #8C6D62;
+  padding: 40px 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-sub {
+  font-size: 11px;
+  color: #A07A66;
+  margin-top: 4px;
+}
+
+    </style>
   </head>
   <body>
     <!-- Top Cute Cafe Awning Banner -->
@@ -455,6 +2001,985 @@
     </footer>
 
     <!-- Pure Script file -->
-    <script type="module" src="./script.js"></script>
+    <script id="embeddedScript">
+/**
+ * Pastel Cafe Recipe Rescaler - Interactive Script
+ * Fully client-side with sound synthesis, deep voice greeting,
+ * scattered floating utensils with household tips, and persistent recipe rescaling.
+ */
+
+// =========================================================================
+// DATA & CONSTANTS
+// =========================================================================
+const STORAGE_KEY = 'pastel_cafe_recipe_rescaler_vanilla_v1';
+
+const COMMON_UNITS = [
+  'cups',
+  'tbsp',
+  'tsp',
+  'grams',
+  'ml',
+  'oz',
+  'lbs',
+  'pieces',
+  'cloves',
+  'pinches',
+];
+
+const PRESET_RECIPES = [
+  {
+    name: 'Fluffy Strawberry Pancakes',
+    emoji: '🥞',
+    servings: 4,
+    wanted: 8,
+    ingredients: [
+      { name: 'All-Purpose Flour', amount: '2', unit: 'cups' },
+      { name: 'Fresh Milk', amount: '1.5', unit: 'cups' },
+      { name: 'Granulated Sugar', amount: '0.25', unit: 'cups' },
+    ],
+  },
+  {
+    name: 'Choco-Chip Cafe Cookies',
+    emoji: '🍪',
+    servings: 12,
+    wanted: 24,
+    ingredients: [
+      { name: 'Semi-Sweet Chocolate Chips', amount: '2', unit: 'cups' },
+      { name: 'Unsalted Butter (melted)', amount: '1', unit: 'cups' },
+      { name: 'Brown Sugar', amount: '0.75', unit: 'cups' },
+    ],
+  },
+  {
+    name: 'Cozy Matcha Latte Pastry',
+    emoji: '🍵',
+    servings: 2,
+    wanted: 6,
+    ingredients: [
+      { name: 'Culinary Matcha Powder', amount: '3', unit: 'tbsp' },
+      { name: 'Heavy Whipping Cream', amount: '1.25', unit: 'cups' },
+      { name: 'Sweetened Condensed Milk', amount: '0.5', unit: 'cups' },
+    ],
+  },
+];
+
+// Household tips for scattered kitchen utensils
+const UTENSIL_TIPS = {
+  spoon: {
+    emoji: '🥄',
+    title: 'Silver Spoon Household Tip',
+    tip: 'Dip a chilled metal spoon into a simmering sauce to check its coating consistency ("nappe") without scorching your tongue! Also, rubbing a stainless steel spoon on your hands under cold tap water neutralizes stubborn garlic and onion odors instantly!',
+  },
+  barbecue: {
+    emoji: '🥩🔥',
+    title: 'BBQ Tongs Household Tip',
+    tip: 'Always click your BBQ tongs twice to calibrate chef accuracy! For cleaning hot grill grates safely, use your tongs to grip a cut onion half face-down—the natural enzymes and steam vaporize baked-on char with zero wire-bristle hazard!',
+  },
+  whisk: {
+    emoji: '🥣',
+    title: 'Balloon Whisk Household Tip',
+    tip: 'When whipping cream or egg whites, whisk in an energetic figure-8 pattern instead of simple circular loops. This incorporates 40% more aerated micro-bubbles in half the mixing time!',
+  },
+  fork: {
+    emoji: '🍴',
+    title: 'Pastry Fork Household Tip',
+    tip: 'Lightly dip fork tines in flour before crimping pie and pastry crusts to prevent dough sticking. You can also use two forks back-to-back to shred hot cooked chicken breast in seconds flat!',
+  },
+  knife: {
+    emoji: '🔪',
+    title: 'Santoku Knife Household Tip',
+    tip: 'Place a damp paper towel or wet cloth beneath your wooden cutting board to anchor it firmly and eliminate dangerous slips! Hone your blade frequently with a ceramic rod so you never have to force a slice.',
+  },
+  seasoning: {
+    emoji: '🧂',
+    title: 'Pepper Mill Household Tip',
+    tip: 'Gently toast whole black peppercorns in a dry skillet over low heat for 45 seconds before refilling your pepper mill. This awakens fragrant piperine oils, giving freshly cracked pepper 10x the aroma of stale store-bought powder!',
+  },
+};
+
+// Rich collection of proud, funny, diverse French chef punchlines (no single repeated line!)
+const CHEF_PUNCHLINES = [
+  "Welcome to MY cafe! Look at my magnificent mustache—you have come to the right master for culinary advice!",
+  "Look upon these arching eyebrows! They have judged world-champion soufflés and found them wanting!",
+  "Rule number one of Pierre's kitchen: Butter is not merely an ingredient, butter is a sacred religion!",
+  "You stand before the Cafe itself! Who else possesses such flawless mathematical taste and velvety sauces?",
+  "In Paris they call me 'The Emperor of Emulsions'! Bask in my culinary wisdom, mon cher friend!",
+  "Look at that dense, curled mustache—it only twitches when a recipe is balanced to divine culinary perfection!",
+  "People cross oceans and climb snowy peaks just to ask Chef Pierre how much vanilla extract to add!",
+  "Scaling recipes is pure geometry, but under my toque, it becomes a dazzling symphony of flavor!",
+  "You need advice? Naturally! Even royalty requests Pierre's presence when scaling chocolate ganache!",
+  "A pinch of patience, a mountain of butter, and Pierre's guidance—your feast will go down in cafe history!",
+  "You have the good fortune to consult the finest culinary mind in the hemisphere! What is your next command?",
+  "Notice how the whole cafe glows when Pierre smiles? That is what 30 years of pastry perfection looks like!",
+];
+
+let lastPunchlineIndex = -1;
+
+function getFreshPunchline() {
+  let nextIdx;
+  do {
+    nextIdx = Math.floor(Math.random() * CHEF_PUNCHLINES.length);
+  } while (nextIdx === lastPunchlineIndex && CHEF_PUNCHLINES.length > 1);
+  lastPunchlineIndex = nextIdx;
+  return CHEF_PUNCHLINES[nextIdx];
+}
+
+// Convert decimals to culinary fractions
+function toCulinaryFraction(val) {
+  if (val <= 0) return '0';
+  const whole = Math.floor(val);
+  const remainder = val - whole;
+  const tolerance = 0.04;
+
+  let fraction = '';
+  if (Math.abs(remainder - 0.25) <= tolerance) fraction = '¼';
+  else if (Math.abs(remainder - 0.333) <= tolerance) fraction = '⅓';
+  else if (Math.abs(remainder - 0.5) <= tolerance) fraction = '½';
+  else if (Math.abs(remainder - 0.666) <= tolerance) fraction = '⅔';
+  else if (Math.abs(remainder - 0.75) <= tolerance) fraction = '¾';
+  else if (Math.abs(remainder - 0.125) <= tolerance) fraction = '⅛';
+  else if (remainder < 0.05) {
+    return whole > 0 ? `${whole}` : '0';
+  } else {
+    return `${parseFloat(val.toFixed(2))}`;
+  }
+
+  return whole > 0 ? `${whole} ${fraction}` : fraction;
+}
+
+// =========================================================================
+// SOUND & KITCHEN SYNTHESIZER
+// =========================================================================
+let soundEnabled = true;
+
+// Kitchen & Mascot Synthesized Sound Effects
+function playSound(type) {
+  if (!soundEnabled) return;
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+    const ctx = new AudioContextClass();
+
+    if (type === 'spoon') {
+      [0, 0.08, 0.2].forEach((offset, idx) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(1750 + idx * 320, ctx.currentTime + offset);
+        gain.gain.setValueAtTime(0.24, ctx.currentTime + offset);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + offset + 0.18);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(ctx.currentTime + offset);
+        osc.stop(ctx.currentTime + offset + 0.2);
+      });
+    } else if (type === 'fork') {
+      [0, 0.07].forEach((offset, idx) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(2400 + idx * 450, ctx.currentTime + offset);
+        gain.gain.setValueAtTime(0.2, ctx.currentTime + offset);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + offset + 0.22);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(ctx.currentTime + offset);
+        osc.stop(ctx.currentTime + offset + 0.25);
+      });
+    } else if (type === 'knife') {
+      [0, 0.12, 0.25].forEach((offset) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(320, ctx.currentTime + offset);
+        osc.frequency.exponentialRampToValueAtTime(60, ctx.currentTime + offset + 0.08);
+        gain.gain.setValueAtTime(0.35, ctx.currentTime + offset);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + offset + 0.09);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(ctx.currentTime + offset);
+        osc.stop(ctx.currentTime + offset + 0.1);
+      });
+    } else if (type === 'barbecue') {
+      // Double click tongs
+      [0, 0.09].forEach((offset) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(850, ctx.currentTime + offset);
+        osc.frequency.exponentialRampToValueAtTime(1450, ctx.currentTime + offset + 0.04);
+        gain.gain.setValueAtTime(0.32, ctx.currentTime + offset);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + offset + 0.05);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(ctx.currentTime + offset);
+        osc.stop(ctx.currentTime + offset + 0.06);
+      });
+
+      // Hot sizzle noise
+      const bufferSize = ctx.sampleRate * 0.45;
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() * 2 - 1) * 0.5;
+      }
+      const noise = ctx.createBufferSource();
+      noise.buffer = buffer;
+      const bFilter = ctx.createBiquadFilter();
+      bFilter.type = 'highpass';
+      bFilter.frequency.value = 2600;
+
+      const sizzleGain = ctx.createGain();
+      sizzleGain.gain.setValueAtTime(0, ctx.currentTime + 0.14);
+      sizzleGain.gain.linearRampToValueAtTime(0.24, ctx.currentTime + 0.18);
+      sizzleGain.gain.exponentialRampToValueAtTime(0.005, ctx.currentTime + 0.55);
+
+      noise.connect(bFilter);
+      bFilter.connect(sizzleGain);
+      sizzleGain.connect(ctx.destination);
+      noise.start(ctx.currentTime + 0.14);
+    } else if (type === 'whisk') {
+      [0, 0.07, 0.14, 0.22].forEach((offset, idx) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(360 + idx * 70, ctx.currentTime + offset);
+        osc.frequency.linearRampToValueAtTime(560 - idx * 50, ctx.currentTime + offset + 0.07);
+        gain.gain.setValueAtTime(0.2, ctx.currentTime + offset);
+        gain.gain.linearRampToValueAtTime(0.01, ctx.currentTime + offset + 0.07);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(ctx.currentTime + offset);
+        osc.stop(ctx.currentTime + offset + 0.08);
+      });
+    } else if (type === 'seasoning') {
+      [0, 0.05, 0.11, 0.17].forEach((offset) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(650 + Math.random() * 300, ctx.currentTime + offset);
+        gain.gain.setValueAtTime(0.18, ctx.currentTime + offset);
+        gain.gain.exponentialRampToValueAtTime(0.005, ctx.currentTime + offset + 0.04);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(ctx.currentTime + offset);
+        osc.stop(ctx.currentTime + offset + 0.05);
+      });
+    } else if (type === 'chime') {
+      const notes = [523.25, 659.25, 783.99, 1046.5];
+      notes.forEach((freq, i) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(0, ctx.currentTime + i * 0.07);
+        gain.gain.linearRampToValueAtTime(0.2, ctx.currentTime + i * 0.07 + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.07 + 0.35);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(ctx.currentTime + i * 0.07);
+        osc.stop(ctx.currentTime + i * 0.07 + 0.4);
+      });
+    } else if (type === 'pop') {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(480, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(840, ctx.currentTime + 0.08);
+      gain.gain.setValueAtTime(0.2, ctx.currentTime);
+      gain.gain.linearRampToValueAtTime(0.01, ctx.currentTime + 0.08);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.09);
+    } else if (type === 'boing') {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(220, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(640, ctx.currentTime + 0.15);
+      gain.gain.setValueAtTime(0.22, ctx.currentTime);
+      gain.gain.linearRampToValueAtTime(0.01, ctx.currentTime + 0.25);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.26);
+    }
+  } catch {
+    // ignore
+  }
+}
+
+// =========================================================================
+// APPLICATION STATE & PERSISTENCE
+// =========================================================================
+let state = {
+  dishName: 'Fluffy Strawberry Pancakes',
+  servingsRecipeMakes: '4',
+  servingsWanted: '8',
+  ingredients: [
+    { id: '1', name: 'All-Purpose Flour', amount: '2', unit: 'cups' },
+    { id: '2', name: 'Fresh Milk', amount: '1.5', unit: 'cups' },
+    { id: '3', name: 'Granulated Sugar', amount: '0.25', unit: 'cups' },
+  ],
+  isCalculated: true,
+  hearts: 0,
+};
+
+function loadState() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (parsed.dishName !== undefined) state.dishName = parsed.dishName;
+      if (parsed.servingsRecipeMakes !== undefined) state.servingsRecipeMakes = String(parsed.servingsRecipeMakes);
+      if (parsed.servingsWanted !== undefined) state.servingsWanted = String(parsed.servingsWanted);
+      if (Array.isArray(parsed.ingredients) && parsed.ingredients.length >= 3) {
+        state.ingredients = parsed.ingredients;
+      }
+      if (parsed.isCalculated !== undefined) {
+        // Only keep calculated if servings are valid numbers > 0
+        const m = parseFloat(state.servingsRecipeMakes);
+        const w = parseFloat(state.servingsWanted);
+        state.isCalculated = parsed.isCalculated && m > 0 && w > 0;
+      }
+    }
+  } catch {
+    // ignore
+  }
+}
+
+function saveState() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch {
+    // ignore
+  }
+}
+
+// =========================================================================
+// DOM ELEMENTS
+// =========================================================================
+const dishNameInput = document.getElementById('dishNameInput');
+const recipeMakesInput = document.getElementById('recipeMakesInput');
+const servingsWantedInput = document.getElementById('servingsWantedInput');
+const ingredientsList = document.getElementById('ingredientsList');
+const addIngredientBtn = document.getElementById('addIngredientBtn');
+const rescaleBtn = document.getElementById('rescaleBtn');
+const errorCard = document.getElementById('errorCard');
+const errorMessageText = document.getElementById('errorMessageText');
+const resultsCard = document.getElementById('resultsCard');
+const resultDishTitle = document.getElementById('resultDishTitle');
+const resultServingsSubtitle = document.getElementById('resultServingsSubtitle');
+const multiplierValue = document.getElementById('multiplierValue');
+const scaledIngredientsGrid = document.getElementById('scaledIngredientsGrid');
+const copyRecipeBtn = document.getElementById('copyRecipeBtn');
+const copyText = document.getElementById('copyText');
+const resetBtn = document.getElementById('resetBtn');
+const soundToggleBtn = document.getElementById('soundToggleBtn');
+const soundIcon = document.getElementById('soundIcon');
+const soundText = document.getElementById('soundText');
+const presetsGrid = document.getElementById('presetsGrid');
+const liveCommentaryText = document.getElementById('liveCommentaryText');
+
+// Mascot elements
+const mascotInteractive = document.getElementById('mascotInteractive');
+const mascotBubble = document.getElementById('mascotBubble');
+const mascotDialogueText = document.getElementById('mascotDialogueText');
+const heartsCounter = document.getElementById('heartsCounter');
+const scrollPercentBadge = document.getElementById('scrollPercentBadge');
+const eyebrowIndicator = document.getElementById('eyebrowIndicator');
+const chefEyebrows = document.getElementById('chefEyebrows');
+const chefMustache = document.getElementById('chefMustache');
+const chefHatGroup = document.getElementById('chefHatGroup');
+const headerChefIcon = document.getElementById('headerChefIcon');
+const closeBubbleBtn = document.getElementById('closeBubbleBtn');
+const bubbleOpenPrompt = document.getElementById('bubbleOpenPrompt');
+let isBubbleOpen = true; // Speech cloud visibility state
+
+// Utensil Tip Toast
+const utensilTipToast = document.getElementById('utensilTipToast');
+const tipToastIcon = document.getElementById('tipToastIcon');
+const tipToastTitle = document.getElementById('tipToastTitle');
+const tipToastBody = document.getElementById('tipToastBody');
+const closeTipBtn = document.getElementById('closeTipBtn');
+let tipTimeout = null;
+
+// =========================================================================
+// RENDERING & UI LOGIC
+// =========================================================================
+
+// Render Preset Cards
+function renderPresets() {
+  presetsGrid.innerHTML = '';
+  PRESET_RECIPES.forEach((preset) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'preset-card-btn';
+    btn.innerHTML = `
+      <span class="preset-emoji">${preset.emoji}</span>
+      <div style="min-width: 0;">
+        <p class="preset-name">${preset.name}</p>
+        <p class="preset-sub">Makes ${preset.servings} ➜ Target ${preset.wanted}</p>
+      </div>
+    `;
+    btn.addEventListener('click', () => loadPreset(preset));
+    presetsGrid.appendChild(btn);
+  });
+}
+
+function loadPreset(preset) {
+  playSound('pop');
+  state.dishName = preset.name;
+  state.servingsRecipeMakes = String(preset.servings);
+  state.servingsWanted = String(preset.wanted);
+  state.ingredients = preset.ingredients.map((ing, i) => ({
+    id: String(Date.now() + i),
+    name: ing.name,
+    amount: ing.amount,
+    unit: ing.unit,
+  }));
+  state.isCalculated = true;
+
+  syncInputsToState();
+  renderIngredients();
+  renderCalculation();
+  updateLiveCommentary();
+  saveState();
+
+  triggerChefAnimation();
+  setMascotText(`Ohh, you loaded ${preset.name}! It was very delicious by the way! A timeless cafe classic!`);
+}
+
+// Render dynamic ingredients form rows
+function renderIngredients() {
+  ingredientsList.innerHTML = '';
+  state.ingredients.forEach((ing, index) => {
+    const row = document.createElement('div');
+    row.className = 'ingredient-row';
+    row.dataset.id = ing.id;
+
+    // Unit options HTML
+    const optionsHtml = COMMON_UNITS.map(
+      (u) => `<option value="${u}" ${ing.unit === u ? 'selected' : ''}>${u}</option>`
+    ).join('');
+
+    row.innerHTML = `
+      <div class="ing-badge-wrap">
+        <span class="ing-badge">${index + 1}</span>
+      </div>
+      <input 
+        type="text" 
+        class="cartoon-input ing-name-input" 
+        placeholder="Ingredient #${index + 1} (e.g. Flour)" 
+        value="${ing.name}"
+      />
+      <input 
+        type="number" 
+        step="any" 
+        min="0" 
+        class="cartoon-input ing-amount-input" 
+        placeholder="Amount" 
+        value="${ing.amount}"
+      />
+      <select class="cartoon-input ing-unit-select">
+        ${optionsHtml}
+      </select>
+      ${
+        state.ingredients.length > 3
+          ? `<button type="button" class="ing-remove-btn" title="Remove ingredient">&times;</button>`
+          : ''
+      }
+    `;
+
+    // Event listeners
+    const nameInput = row.querySelector('.ing-name-input');
+    const amountInput = row.querySelector('.ing-amount-input');
+    const unitSelect = row.querySelector('.ing-unit-select');
+    const removeBtn = row.querySelector('.ing-remove-btn');
+
+    nameInput.addEventListener('input', (e) => {
+      ing.name = e.target.value;
+      updateLiveCommentary();
+      if (state.isCalculated) renderCalculation();
+      saveState();
+    });
+
+    amountInput.addEventListener('input', (e) => {
+      ing.amount = e.target.value;
+      updateLiveCommentary();
+      if (state.isCalculated) renderCalculation();
+      saveState();
+    });
+
+    unitSelect.addEventListener('change', (e) => {
+      ing.unit = e.target.value;
+      if (state.isCalculated) renderCalculation();
+      saveState();
+    });
+
+    if (removeBtn) {
+      removeBtn.addEventListener('click', () => {
+        if (state.ingredients.length <= 3) {
+          alert('Our cafe standard requires at least 3 core ingredients!');
+          return;
+        }
+        playSound('pop');
+        state.ingredients = state.ingredients.filter((item) => item.id !== ing.id);
+        renderIngredients();
+        if (state.isCalculated) renderCalculation();
+        saveState();
+      });
+    }
+
+    ingredientsList.appendChild(row);
+  });
+}
+
+function syncInputsToState() {
+  dishNameInput.value = state.dishName;
+  recipeMakesInput.value = state.servingsRecipeMakes;
+  servingsWantedInput.value = state.servingsWanted;
+}
+
+// Live Chef Pierre Commentary on Ingredients
+function updateLiveCommentary() {
+  const dish = state.dishName.trim() || 'this delicacy';
+  const flour = state.ingredients.find((i) => i.name.toLowerCase().includes('flour'));
+  const sugar = state.ingredients.find(
+    (i) => i.name.toLowerCase().includes('sugar') || i.name.toLowerCase().includes('honey')
+  );
+  const milk = state.ingredients.find(
+    (i) => i.name.toLowerCase().includes('milk') || i.name.toLowerCase().includes('cream')
+  );
+
+  const flourAmt = flour ? parseFloat(flour.amount) : 0;
+  const sugarAmt = sugar ? parseFloat(sugar.amount) : 0;
+  const milkAmt = milk ? parseFloat(milk.amount) : 0;
+  const makesNum = parseFloat(state.servingsRecipeMakes);
+  const wantedNum = parseFloat(state.servingsWanted);
+
+  let comment = `Ohh, you want to make ${dish}? It was very delicious by the way! A culinary choice of pure distinction!`;
+
+  if (sugarAmt >= 1.5) {
+    comment = `Ohh, you want to make ${dish}? It was remarkably delicious by the way! But look at that sweet ${sugarAmt} ${sugar?.unit || 'cups'} of sugar—my sweet tooth is doing a pirouette!`;
+  } else if (flourAmt >= 3) {
+    comment = `Ohh, making ${dish}? It was very delicious by the way! With ${flourAmt} ${flour?.unit || 'cups'} of flour, you are building an edible cathedral!`;
+  } else if (milkAmt >= 2) {
+    comment = `Ohh, ${dish}! Rich and creamy! A full ${milkAmt} ${milk?.unit || 'cups'} of dairy—Chef Pierre salutes your lavish good taste!`;
+  } else if (!isNaN(wantedNum) && !isNaN(makesNum) && wantedNum > makesNum * 2) {
+    comment = `Ohh, you want to make ${dish}? It was very delicious by the way! Scaling up to ${wantedNum} servings? You are throwing a grand party worthy of the cafe!`;
+  }
+
+  liveCommentaryText.textContent = `"${comment}"`;
+}
+
+// =========================================================================
+// RESCALE ENGINE & STRICT RULE 4 VALIDATION
+// =========================================================================
+function renderCalculation() {
+  const makesTrimmed = state.servingsRecipeMakes.trim();
+  const wantedTrimmed = state.servingsWanted.trim();
+  const makesNum = parseFloat(makesTrimmed);
+  const wantedNum = parseFloat(wantedTrimmed);
+
+  // CORE RULE 4: Show a message, and NO result, if either servings number is empty, zero or negative!
+  if (makesTrimmed === '' || isNaN(makesNum) || makesNum <= 0 || wantedTrimmed === '' || isNaN(wantedNum) || wantedNum <= 0) {
+    resultsCard.classList.add('hidden');
+
+    let msg = '';
+    if (makesTrimmed === '' || isNaN(makesNum)) {
+      msg = '⚠️ Please enter how many servings the original recipe makes! It cannot be empty.';
+    } else if (makesNum <= 0) {
+      msg = `⚠️ Recipe servings must be greater than zero! You entered "${makesTrimmed}".`;
+    } else if (wantedTrimmed === '' || isNaN(wantedNum)) {
+      msg = '⚠️ Please enter how many servings you want! It cannot be empty.';
+    } else if (wantedNum <= 0) {
+      msg = `⚠️ Desired servings must be greater than zero! You entered "${wantedTrimmed}".`;
+    }
+
+    if (state.isCalculated) {
+      errorCard.classList.remove('hidden');
+      errorMessageText.textContent = msg;
+    } else {
+      errorCard.classList.add('hidden');
+    }
+    return;
+  }
+
+  // If servings are valid positive numbers:
+  errorCard.classList.add('hidden');
+
+  if (!state.isCalculated) {
+    resultsCard.classList.add('hidden');
+    return;
+  }
+
+  // Formula: original amount * (serving wanted / serving recipe makes)
+  const ratio = wantedNum / makesNum;
+
+  resultDishTitle.textContent = `Scaled Recipe for: ${state.dishName || 'Delicious Dish'}`;
+  resultServingsSubtitle.textContent = `Recalculated for ${wantedNum} servings (originally made ${makesNum})`;
+  multiplierValue.textContent = `${ratio.toFixed(2)}x`;
+
+  scaledIngredientsGrid.innerHTML = '';
+  state.ingredients.forEach((ing, idx) => {
+    const origAmt = parseFloat(ing.amount.trim());
+    const validOrig = !isNaN(origAmt) && origAmt >= 0 ? origAmt : 0;
+    const newAmt = validOrig * ratio;
+    const formattedAmt = parseFloat(newAmt.toFixed(3));
+    const fractionText = toCulinaryFraction(newAmt);
+
+    const card = document.createElement('div');
+    card.className = 'scaled-card';
+    card.innerHTML = `
+      <div class="scaled-card-top">
+        <div class="scaled-badge-row">
+          <span class="scaled-badge">Ingredient #${idx + 1}</span>
+          <span class="scaled-orig-note">${validOrig} ${ing.unit} orig.</span>
+        </div>
+        <h4 class="scaled-ing-name">${ing.name || `Ingredient ${idx + 1}`}</h4>
+      </div>
+      <div class="scaled-card-calc">
+        <div class="scaled-new-label">New Required Amount:</div>
+        <div class="scaled-amount-display">
+          <span class="scaled-number">${formattedAmt}</span>
+          <span class="scaled-unit">${ing.unit}</span>
+        </div>
+        ${
+          fractionText !== `${formattedAmt}`
+            ? `<div class="scaled-fraction-pill">≈ ${fractionText} ${ing.unit} (Kitchen fraction)</div>`
+            : ''
+        }
+        <p class="scaled-formula-line">
+          ${validOrig} × (${wantedNum} ÷ ${makesNum}) = ${formattedAmt}
+        </p>
+      </div>
+    `;
+    scaledIngredientsGrid.appendChild(card);
+  });
+
+  resultsCard.classList.remove('hidden');
+}
+
+// Rescale button click
+function handleRescaleClick() {
+  const makesTrimmed = state.servingsRecipeMakes.trim();
+  const wantedTrimmed = state.servingsWanted.trim();
+  const makesNum = parseFloat(makesTrimmed);
+  const wantedNum = parseFloat(wantedTrimmed);
+
+  if (makesTrimmed === '' || isNaN(makesNum) || makesNum <= 0 || wantedTrimmed === '' || isNaN(wantedNum) || wantedNum <= 0) {
+    state.isCalculated = true; // trigger error display
+    playSound('boing');
+    renderCalculation();
+    saveState();
+    triggerChefAnimation(true);
+    setMascotText("Sacré bleu! Servings must be positive numbers greater than 0! Pierre cannot divide by zero or un-bake a cake!");
+    return;
+  }
+
+  // Valid!
+  state.isCalculated = true;
+  playSound('chime');
+  renderCalculation();
+  saveState();
+
+  triggerChefAnimation(false);
+  const punchline = getFreshPunchline();
+  setMascotText(
+    `Voilà! Pierre has recalculated every gram to perfection! Multiplier factor is ${(wantedNum / makesNum).toFixed(2)}x! ${punchline}`
+  );
+}
+
+// Copy to Clipboard
+function handleCopyRecipe() {
+  const makesNum = parseFloat(state.servingsRecipeMakes);
+  const wantedNum = parseFloat(state.servingsWanted);
+  if (isNaN(makesNum) || isNaN(wantedNum) || makesNum <= 0 || wantedNum <= 0) return;
+
+  const ratio = wantedNum / makesNum;
+  playSound('chime');
+
+  const lines = [
+    `🍰 Scaled Recipe: ${state.dishName || 'Delicious Dish'}`,
+    `Original Servings: ${makesNum} ➜ Target Servings: ${wantedNum} (Factor: ${ratio.toFixed(2)}x)`,
+    `---------------------------------------`,
+    ...state.ingredients.map((ing, i) => {
+      const orig = parseFloat(ing.amount) || 0;
+      const scaled = parseFloat((orig * ratio).toFixed(3));
+      return `${i + 1}. ${ing.name || 'Ingredient'}: ${scaled} ${ing.unit} (was ${orig} ${ing.unit})`;
+    }),
+    `---------------------------------------`,
+    `Crafted with love at Chef Pierre's Grand Culinary Studio 🥐`,
+  ].join('\n');
+
+  navigator.clipboard.writeText(lines).then(() => {
+    copyText.textContent = 'Copied!';
+    setTimeout(() => {
+      copyText.textContent = 'Copy Recipe';
+    }, 2500);
+  });
+}
+
+// =========================================================================
+// INTERACTIVE CHEF PIERRE & DEEP VOICE GREETING
+// =========================================================================
+function triggerChefAnimation(raiseEyebrowsOnly = false) {
+  if (raiseEyebrowsOnly) {
+    chefEyebrows.classList.add('eyebrows-raised');
+    eyebrowIndicator.classList.remove('hidden');
+    setTimeout(() => {
+      chefEyebrows.classList.remove('eyebrows-raised');
+      eyebrowIndicator.classList.add('hidden');
+    }, 1500);
+    return;
+  }
+
+  // Full proud reaction
+  mascotInteractive.classList.add('proud-shake');
+  chefEyebrows.classList.add('eyebrows-raised');
+  chefMustache.classList.add('mustache-wiggling');
+  eyebrowIndicator.classList.remove('hidden');
+
+  setTimeout(() => {
+    mascotInteractive.classList.remove('proud-shake');
+    chefMustache.classList.remove('mustache-wiggling');
+    setTimeout(() => {
+      chefEyebrows.classList.remove('eyebrows-raised');
+      eyebrowIndicator.classList.add('hidden');
+    }, 800);
+  }, 1400);
+}
+
+function toggleBubble(forceState) {
+  if (typeof forceState === 'boolean') {
+    isBubbleOpen = forceState;
+  } else {
+    isBubbleOpen = !isBubbleOpen;
+  }
+
+  if (isBubbleOpen) {
+    mascotBubble.classList.remove('bubble-hidden');
+    if (bubbleOpenPrompt) bubbleOpenPrompt.classList.add('hidden');
+  } else {
+    mascotBubble.classList.add('bubble-hidden');
+    if (bubbleOpenPrompt) bubbleOpenPrompt.classList.remove('hidden');
+  }
+}
+
+function setMascotText(text, autoOpen = true) {
+  mascotDialogueText.textContent = text;
+  if (autoOpen && !isBubbleOpen) {
+    toggleBubble(true);
+  }
+}
+
+// Mascot Click Handler: When clicked it will appear, and when clicked again it will disappear!
+function handleMascotClick(e) {
+  if (e && e.stopPropagation) e.stopPropagation();
+
+  // If cloud is already open, clicking toggles it off (disappear)
+  if (isBubbleOpen) {
+    playSound('pop');
+    toggleBubble(false);
+    return;
+  }
+
+  // If cloud is closed, clicking makes it appear with animation and fresh punchline!
+  state.hearts += 1;
+  heartsCounter.textContent = `❤️ x${state.hearts}`;
+  
+  triggerChefAnimation();
+  playSound('chime');
+
+  const punchline = getFreshPunchline();
+  setMascotText(punchline, false);
+  toggleBubble(true);
+}
+
+// Scroll reaction for toque blanche hat
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+  const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = totalHeight > 0 ? Math.min(Math.max(currentScrollY / totalHeight, 0), 1) : 0;
+
+  scrollPercentBadge.textContent = `Scroll: ${Math.round(progress * 100)}%`;
+
+  // Dynamically tilt chef toque hat as you scroll down
+  const hatTilt = Math.sin(progress * Math.PI * 4) * 16;
+  chefHatGroup.style.transform = `rotate(${hatTilt}deg)`;
+
+  // Eyebrow arch on scroll
+  if (progress > 0.25 && progress < 0.75) {
+    chefEyebrows.classList.add('eyebrows-raised');
+    eyebrowIndicator.classList.remove('hidden');
+  } else {
+    chefEyebrows.classList.remove('eyebrows-raised');
+    eyebrowIndicator.classList.add('hidden');
+  }
+}, { passive: true });
+
+// =========================================================================
+// SCATTERED KITCHEN UTENSILS & HOUSEHOLD TIPS
+// =========================================================================
+function showUtensilTip(utensilKey) {
+  const item = UTENSIL_TIPS[utensilKey];
+  if (!item) return;
+
+  playSound(utensilKey);
+
+  // Animate the clicked utensil element
+  const elem = document.querySelector(`.scattered-utensil[data-utensil="${utensilKey}"]`);
+  if (elem) {
+    elem.classList.add('utensil-bounce');
+    setTimeout(() => elem.classList.remove('utensil-bounce'), 600);
+  }
+
+  // Display Tip Toast
+  tipToastIcon.textContent = item.emoji;
+  tipToastTitle.textContent = item.title;
+  tipToastBody.textContent = item.tip;
+  utensilTipToast.classList.remove('hidden');
+
+  // Chef Pierre comments on the utensil
+  triggerChefAnimation(true);
+  setMascotText(`You clicked the ${item.title}! Notice the tip above—a true chef always knows their tools!`);
+
+  // Auto hide after 8 seconds
+  if (tipTimeout) clearTimeout(tipTimeout);
+  tipTimeout = setTimeout(() => {
+    utensilTipToast.classList.add('hidden');
+  }, 8000);
+}
+
+// Attach event listeners to all scattered utensils
+document.querySelectorAll('.scattered-utensil').forEach((btn) => {
+  const utensilKey = btn.dataset.utensil;
+  btn.addEventListener('click', () => showUtensilTip(utensilKey));
+});
+
+closeTipBtn.addEventListener('click', () => {
+  utensilTipToast.classList.add('hidden');
+});
+
+// =========================================================================
+// EVENT LISTENERS & INITIALIZATION
+// =========================================================================
+dishNameInput.addEventListener('input', (e) => {
+  state.dishName = e.target.value;
+  updateLiveCommentary();
+  if (state.isCalculated) renderCalculation();
+  saveState();
+});
+
+recipeMakesInput.addEventListener('input', (e) => {
+  state.servingsRecipeMakes = e.target.value;
+  updateLiveCommentary();
+  renderCalculation();
+  saveState();
+});
+
+servingsWantedInput.addEventListener('input', (e) => {
+  state.servingsWanted = e.target.value;
+  updateLiveCommentary();
+  renderCalculation();
+  saveState();
+});
+
+addIngredientBtn.addEventListener('click', () => {
+  playSound('pop');
+  state.ingredients.push({
+    id: String(Date.now()),
+    name: '',
+    amount: '1',
+    unit: 'cups',
+  });
+  renderIngredients();
+  if (state.isCalculated) renderCalculation();
+  saveState();
+  setMascotText("Ooh! Adding another ingredient? Pierre loves an ambitious recipe with rich layers!");
+});
+
+rescaleBtn.addEventListener('click', handleRescaleClick);
+copyRecipeBtn.addEventListener('click', handleCopyRecipe);
+
+resetBtn.addEventListener('click', () => {
+  playSound('boing');
+  state.dishName = 'Berry Vanilla Tart';
+  state.servingsRecipeMakes = '4';
+  state.servingsWanted = '8';
+  state.ingredients = [
+    { id: '1', name: 'Fresh Strawberries', amount: '2', unit: 'cups' },
+    { id: '2', name: 'Pastry Cream', amount: '1.5', unit: 'cups' },
+    { id: '3', name: 'Almond Flour Crust', amount: '1', unit: 'cups' },
+  ];
+  state.isCalculated = true;
+  syncInputsToState();
+  renderIngredients();
+  renderCalculation();
+  updateLiveCommentary();
+  saveState();
+  setMascotText("A fresh canvas! Let us create another culinary legend together in my cafe!");
+});
+
+soundToggleBtn.addEventListener('click', () => {
+  soundEnabled = !soundEnabled;
+  if (soundEnabled) {
+    soundIcon.textContent = '🔊';
+    soundText.textContent = 'Sound On';
+    playSound('pop');
+  } else {
+    soundIcon.textContent = '🔇';
+    soundText.textContent = 'Sound Off';
+  }
+});
+
+mascotInteractive.addEventListener('click', handleMascotClick);
+headerChefIcon.addEventListener('click', handleMascotClick);
+
+// Clicking speech cloud closes it (disappear)
+mascotBubble.addEventListener('click', (e) => {
+  e.stopPropagation();
+  playSound('pop');
+  toggleBubble(false);
+});
+
+// Close button on speech cloud
+if (closeBubbleBtn) {
+  closeBubbleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    playSound('pop');
+    toggleBubble(false);
+  });
+}
+
+// Mini prompt button when cloud is hidden (click to make it appear)
+if (bubbleOpenPrompt) {
+  bubbleOpenPrompt.addEventListener('click', (e) => {
+    e.stopPropagation();
+    handleMascotClick(e);
+  });
+}
+
+// Keydown access for mascot
+mascotInteractive.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    handleMascotClick();
+  }
+});
+
+// INITIAL BOOTSTRAP
+function init() {
+  loadState();
+  syncInputsToState();
+  renderPresets();
+  renderIngredients();
+  renderCalculation();
+  updateLiveCommentary();
+}
+
+init();
+
+</script>
   </body>
 </html>
